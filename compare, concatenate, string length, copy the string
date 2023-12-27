@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include "Program719a.c"
+void main() {
+	int op,res;
+	char str1[30],str2[30];
+	printf("1.Compare 2.Concatenate 3.Length 4.Copy String\n");
+	printf("Enter your option : ");
+	scanf("%d", &op);
+	switch(op) {
+		case 1: printf("Enter string-1 : ");
+				scanf("%s", str1);
+				printf("Enter string-2 : ");
+				scanf("%s", str2);
+				res = myStrCmp(str1, str2);
+				if (res == 0)
+					printf("%s is equal to %s\n", str1, str2);
+				else if (res > 0)
+					printf("%s is greater than %s\n", str1, str2);
+				else
+					printf("%s is less than %s\n", str1, str2);
+				break;
+		case 2: printf("Enter string-1 : ");
+				scanf("%s", str1);
+				printf("Enter string-2 : ");
+				scanf("%s", str2);
+				myConcat(str1, str2);
+				printf("The concatenated string : %s\n", str1);
+				break;
+		case 3: printf("Enter the string : ");
+				scanf("%s", str1);
+				res = myStrLen(str1);
+				printf("Length of %s : %d\n", str1, res);
+				break;
+		case 4: printf("Enter the string : ");
+				scanf("%s", str1);
+				myStrCpy(str2, str1);
+				printf("The copied string : %s\n", str2);
+	}
+}
